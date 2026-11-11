@@ -6,7 +6,7 @@ A boot-time safety net for testing Wi-Fi kext builds on an OpenCore Hackintosh. 
 
 I wrote it while bringing up a driver for the MediaTek MT7925 on a laptop with no Ethernet cable nearby. A bad Wi-Fi build there doesn't only break Wi-Fi. It takes the machine off the network, so nothing remote can fix it, and whatever was driving the test (a script, an ssh session, a coding agent) can't reach the network either. The guard needs no network and no person. It decides from inside the machine and puts the working set back.
 
-The defaults fit the MT7925 drivers [MtkWlan](https://github.com/watchthelight-labs/WTLMtkWireless) and [MtkWlanNative](https://github.com/watchthelight-labs/WTLWifiMenu). Other kexts work by changing a few settings.
+The defaults fit the MT7925 kexts MtkWlan and MtkWlanNative. Since 0.14.0 those two are one bundle, [WTLWireless](https://github.com/watchthelight-labs/WTLWireless); for it, set `GUARD_KEXTS`, `GUARD_CORE_ID` and `GUARD_NATIVE_ID` to the bundle's folder and bundle ids (table below). Other kexts work by changing a few settings.
 
 ## The flow
 
